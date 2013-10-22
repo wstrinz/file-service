@@ -29,4 +29,13 @@ class UserFile < ActiveRecord::Base
   def extension
     File.extname(attachment_file_name)[1..-1]
   end
+
+  def mime_type
+    t = MIME::Types.type_for attachment_file_name
+    if t.first
+      t.first.content_type
+    else
+      nil
+    end
+  end
 end

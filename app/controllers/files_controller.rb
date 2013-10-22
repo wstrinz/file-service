@@ -12,7 +12,12 @@ class FilesController < ApplicationController
 
   # @file and @folder are set in require_existing_file
   def show
-    send_file @file.attachment.path, :filename => @file.attachment_file_name
+    type = @file.mime_type
+    if type
+      send_file @file.attachment.path, :filename => @file.attachment_file_name, :type => type
+    else
+      send_file @file.attachment.path, :filename => @file.attachment_file_name
+    end
   end
 
   # @target_folder is set in require_existing_target_folder
