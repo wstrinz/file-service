@@ -14,6 +14,5 @@ gem 'paperclip'
 gem 'jquery-fileupload-rails'
 
 group :test do
-  gem 'pry'
   gem 'factory_girl_rails'
 end
