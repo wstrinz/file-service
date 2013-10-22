@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130628082245) do
+ActiveRecord::Schema.define(version: 20131022032547) do
 
   create_table "folders", force: true do |t|
     t.string   "name"
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_public"
   end
 
   create_table "groups", force: true do |t|
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20130628082245) do
     t.boolean "can_read"
     t.boolean "can_update"
     t.boolean "can_delete"
+    t.boolean "is_public"
   end
 
   create_table "share_links", force: true do |t|

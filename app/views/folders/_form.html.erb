@@ -4,6 +4,10 @@
   <%= f.text_field :name, { :class => 'text_input' } %>
 </p>
 <p>
+  <%= f.label :public %>:
+  <%= f.check_box :is_public, { :class => 'check_box' } %>
+</p>
+<p>
   <%= f.submit t(:save) %> &nbsp; &mdash; &nbsp;
   <%= link_to t(:back), @folder.parent %>
 </p>

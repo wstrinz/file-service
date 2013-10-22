@@ -2,6 +2,9 @@ class FilesController < ApplicationController
   before_filter :require_existing_file, :only => [:show, :edit, :update, :destroy]
   before_filter :require_existing_target_folder, :only => [:new, :create]
 
+  skip_before_filter :require_login, :except => [:new]
+  before_filter :require_login, :unless => :file_not_public?, :only => [:show, :edit, :update, :destroy]
+
   before_filter :require_create_permission, :only => [:new, :create]
   before_filter :require_read_permission, :only => :show
   before_filter :require_update_permission, :only => [:edit, :update]
@@ -55,5 +58,9 @@ class FilesController < ApplicationController
     @folder = @file.folder
   rescue ActiveRecord::RecordNotFound
     redirect_to Folder.root, :alert => t(:already_deleted, :type => t(:this_file))
+  end
+
+  def file_not_public?
+    @file.folder.is_public
   end
 end

@@ -100,6 +100,7 @@ class Folder < ActiveRecord::Base
           p.can_read = permission.can_read
           p.can_update = permission.can_update
           p.can_delete = permission.can_delete
+          p.is_public = permission.is_public
         end
       end
     end
@@ -108,4 +109,5 @@ class Folder < ActiveRecord::Base
   def dont_destroy_root_folder
     raise "Can't delete Root folder" if is_root?
   end
+
 end

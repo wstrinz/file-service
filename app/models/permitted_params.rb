@@ -6,7 +6,7 @@ class PermittedParams < Struct.new(:params, :current_user)
   end
 
   def folder_attributes
-    [:name]
+    [:name, :is_public]
   end
 
   def group_attributes
