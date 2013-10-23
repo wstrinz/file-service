@@ -1,6 +1,6 @@
 # Boxroom
 
-[![Build Status](https://api.travis-ci.org/wstrinz/boxroom.png)](http://travis-ci.org/wstrinz/boxroom)
+[![Build Status](https://travis-ci.org/wstrinz/file-service.png?branch=master)](https://travis-ci.org/wstrinz/file-service)
 [![Code Climate](https://codeclimate.com/github/mischa78/boxroom.png)](https://codeclimate.com/github/mischa78/boxroom)
 
 Boxroom is a Rails application that aims to be a simple interface for managing and
