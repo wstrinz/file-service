@@ -17,7 +17,20 @@ class FoldersController < ApplicationController
 
   # Note: @folder is set in require_existing_folder
   def show
-    render action: 'show_guest' unless current_user
+    template = 'show_guest'
+    if current_user
+
+      respond_to do |format|
+        format.html
+        format.json { render json: @folder.related_objects }
+      end
+    else
+      respond_to do |format|
+        format.html { render action: 'show_guest' }
+        format.json { render json: @folder.related_public_objects }
+      end
+    end
+
   end
 
   def show_guest

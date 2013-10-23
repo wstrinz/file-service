@@ -84,6 +84,14 @@ class Folder < ActiveRecord::Base
     @root_folder ||= find_by_name_and_parent_id('Root folder', nil)
   end
 
+  def related_objects
+    [self,children,user_files].flatten
+  end
+
+  def related_public_objects
+    [self,children.where(is_public: true), user_files].flatten
+  end
+
   private
 
   def check_for_parent
@@ -108,5 +116,4 @@ class Folder < ActiveRecord::Base
   def dont_destroy_root_folder
     raise "Can't delete Root folder" if is_root?
   end
-
 end
