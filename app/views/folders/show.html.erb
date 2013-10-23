@@ -68,6 +68,7 @@
       <% if current_user.can_update(file.folder) -%>
         <%= link_to image_tag('edit.png', :alt => t(:edit)), edit_file_path(file), :title => t(:edit) %>&nbsp;
       <% end -%>
+      <%= link_to image_tag('play.png', :alt => "play"), file_file_play_path(file), :title => "play" %>&nbsp;
       <% if current_user.can_delete(file.folder) -%>
         <%= link_to image_tag('delete.png', :alt => t(:delete_item)), file_path(file), :method => :delete, :data => { :confirm => t(:are_you_sure) }, :title => t(:delete_item) %>&nbsp;
       <% end -%>

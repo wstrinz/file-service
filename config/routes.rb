@@ -3,6 +3,8 @@ Boxroom::Application.routes.draw do
   get '/signin', :to => 'sessions#new', :as => 'signin'
   delete '/signout', :to => 'sessions#destroy'
 
+
+
   # Resources
   resources :admins, :only => [:new, :create]
   resources :sessions, :only => [:new, :create, :destroy]
@@ -35,6 +37,7 @@ Boxroom::Application.routes.draw do
 
   resources :files, :shallow => :true, :only => :show do
     resources :share_links, :only => [:new, :create]
+    get 'play', to: 'files#play'
   end
 
   # You can have the root of your site routed with "root"
