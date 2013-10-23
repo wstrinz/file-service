@@ -14,10 +14,13 @@ gem 'paperclip'
 gem 'jquery-fileupload-rails'
 
 gem 'thin'
+gem "mediaelement_rails"
 
 group :test do
   gem 'factory_girl_rails'
 end
+
+
 
 group :development do
   gem 'pry'

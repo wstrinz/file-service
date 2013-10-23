@@ -1,3 +1,13 @@
 Play! <br>
 <%= raw "<audio controls preload='auto' autobuffer> <source src='/files/#{@file.id}'/ type='audio/mp3'></audio>" %>
-<%#  audio_tag file_path(@file), controls: true, preload: true %>
+<%#  audio_tag file_path(@file), controls: true, preload: "auto" %>
+
+<script>
+// jQuery method
+$('audio').mediaelementplayer();
+</script>
+
+<script>
+// normal JavaScript
+var player = new MediaElementPlayer('#player');
+</script>

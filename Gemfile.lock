@@ -63,6 +63,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mediaelement_rails (0.5.1)
+      jquery-rails (>= 1.0)
+      railties (>= 3.1)
     method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
@@ -136,6 +139,7 @@ DEPENDENCIES
   factory_girl_rails
   jquery-fileupload-rails
   jquery-rails
+  mediaelement_rails
   paperclip
   pry
   rails (= 4.0.0)

@@ -1,6 +1,8 @@
 /*
 *= require_self
 *= require_tree .
+*= require mediaelement_rails
+*= require mediaelement_rails/mejs-skins
 */
 
 html, body { height: 100%; }
