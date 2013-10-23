@@ -1,7 +1,6 @@
 # Boxroom
 
-[![Build Status](https://api.travis-ci.org/mischa78/boxroom.png)](http://travis-ci.org/mischa78/boxroom)
-[![Dependency Status](https://gemnasium.com/mischa78/boxroom.png?travis)](https://gemnasium.com/mischa78/boxroom)
+[![Build Status](https://travis-ci.org/wstrinz/file-service.png?branch=master)](https://travis-ci.org/wstrinz/file-service)
 [![Code Climate](https://codeclimate.com/github/mischa78/boxroom.png)](https://codeclimate.com/github/mischa78/boxroom)
 
 Boxroom is a Rails application that aims to be a simple interface for managing and
@@ -14,6 +13,15 @@ http://boxroomapp.com/
 Bug reports and feature requests:
 https://github.com/mischa78/boxroom/issues/new
 
+
+### This fork
+
+Just adding some things that may not be within the scope of the main project.
+
+Currently:
+
+ * Public Folders/Files
+ * Content type in http headers
 
 Requirements
 ------------
