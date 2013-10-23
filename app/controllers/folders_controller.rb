@@ -3,6 +3,9 @@ class FoldersController < ApplicationController
   before_filter :require_existing_target_folder, :only => [:new, :create]
   before_filter :require_folder_isnt_root_folder, :only => [:edit, :update, :destroy]
 
+  skip_before_filter :require_login, :except => [:new]
+  before_filter :require_login, :unless => :public?, :only => [:show, :edit, :update, :destroy]
+
   before_filter :require_create_permission, :only => [:new, :create]
   before_filter :require_read_permission, :only => :show
   before_filter :require_update_permission, :only => [:edit, :update]
@@ -14,6 +17,10 @@ class FoldersController < ApplicationController
 
   # Note: @folder is set in require_existing_folder
   def show
+    render action: 'show_guest' unless current_user
+  end
+
+  def show_guest
   end
 
   # Note: @target_folder is set in require_existing_target_folder
@@ -34,6 +41,7 @@ class FoldersController < ApplicationController
 
   # Note: @folder is set in require_existing_folder
   def edit
+
   end
 
   # Note: @folder is set in require_existing_folder
@@ -84,4 +92,9 @@ class FoldersController < ApplicationController
       end
     end
   end
+
+  def public?
+    @folder.is_public
+  end
+
 end

@@ -13,6 +13,12 @@ gem 'acts_as_tree'
 gem 'paperclip'
 gem 'jquery-fileupload-rails'
 
+gem 'thin'
+
 group :test do
   gem 'factory_girl_rails'
+end
+
+group :development do
+  gem 'pry'
 end
