@@ -1,9 +1,9 @@
 class FilesController < ApplicationController
-  before_filter :require_existing_file, :only => [:show, :edit, :update, :destroy]
+  before_filter :require_existing_file, :only => [:show, :edit, :update, :destroy, :play]
   before_filter :require_existing_target_folder, :only => [:new, :create]
 
   skip_before_filter :require_login, :except => [:new]
-  before_filter :require_login, :unless => :file_not_public?, :only => [:show, :edit, :update, :destroy]
+  before_filter :require_login, :unless => :file_not_public?, :only => [:show, :edit, :update, :destroy, :play]
 
   before_filter :require_create_permission, :only => [:new, :create]
   before_filter :require_read_permission, :only => :show

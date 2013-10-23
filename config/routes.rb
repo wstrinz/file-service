@@ -37,8 +37,9 @@ Boxroom::Application.routes.draw do
 
   resources :files, :shallow => :true, :only => :show do
     resources :share_links, :only => [:new, :create]
-    get 'play', to: 'files#play'
   end
+
+  get '/files/:id/play', to: 'files#play', as: 'play_file'
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
