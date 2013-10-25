@@ -22,6 +22,7 @@ Currently:
 
  * Public Folders/Files
  * Content type in http headers
+ * Play audio files
 
 Requirements
 ------------
