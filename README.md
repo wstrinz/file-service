@@ -22,7 +22,7 @@ Currently:
 
  * Public Folders/Files
  * Content type in http headers
- * Play audio files
+ * Play audio files with [Mediaelement](http://mediaelementjs.com/)
 
 Requirements
 ------------
