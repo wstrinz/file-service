@@ -1,10 +1,20 @@
 Play! <br>
-<%= raw "<audio controls preload='auto' autobuffer> <source src='/files/#{@file.id}'/ type='audio/mp3'></audio>" %>
-<%#  audio_tag file_path(@file), controls: true, preload: "auto" %>
+<%# raw "<audio controls preload='auto' autobuffer> <source src='/files/#{@file.id}'/ type='audio/mp3'></audio>" %>
+
+<% if @file.is_audio %>
+  <%=  audio_tag file_path(@file), type: 'audio/mp3', preload: 'auto', seekable: true %>
+<% elsif @file.is_video %>
+  <%# video_tag file_path(@file), preload: 'auto', type: @file.attachment_content_type, preload: 'auto', seekable: true %>
+  <%= audio_tag file_path(@file), preload: 'auto', type: @file.attachment_content_type, preload: 'auto', seekable: true %>
+<% else %>
+  Cannot play format
+<% end %>
+
 
 <script>
 // jQuery method
 $('audio').mediaelementplayer();
+$('video').mediaelementplayer();
 </script>
 
 <script>

@@ -12,11 +12,12 @@ class FilesController < ApplicationController
 
   # @file and @folder are set in require_existing_file
   def show
-    send_file @file.attachment.path, :filename => @file.attachment_file_name, :type => @file.attachment_content_type
+    response.header["Accept-Ranges"] = "bytes"
+    send_file @file.attachment.path, :filename => @file.attachment_file_name, :type => @file.attachment_content_type, :x_sendfile => true
   end
 
   def play
-
+    response.header["Accept-Ranges"] = "bytes"
   end
 
   # @target_folder is set in require_existing_target_folder

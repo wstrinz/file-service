@@ -30,6 +30,16 @@ class UserFile < ActiveRecord::Base
     File.extname(attachment_file_name)[1..-1]
   end
 
+  def is_audio
+    # %w{audio/mp3}.include? @file.attachment_content_type
+    attachment_content_type.to_s["audio"]
+  end
+
+  def is_video
+    # %w{video/mp4}.include? attachment_content_type
+    attachment_content_type.to_s["video"]
+  end
+
   def mime_type
     t = MIME::Types.type_for attachment_file_name
     if t.first

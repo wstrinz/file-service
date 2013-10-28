@@ -1,4 +1,6 @@
+
 class ApplicationController < ActionController::Base
+
   protect_from_forgery
 
   before_filter :require_admin_in_system
@@ -74,3 +76,4 @@ class ApplicationController < ActionController::Base
     redirect_to Folder.root, :alert => t(:already_deleted, :type => t(:this_folder))
   end
 end
+
